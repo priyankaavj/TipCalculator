@@ -3,7 +3,7 @@ TipCalculator
 
 iOS app to calculate the Tip
 
-<b>TIME SPENT </b>
+<b>TIME SPENT </b><br>
 10 hours in total
 
 <b>COMPLETED USER STORIES</b><br>
