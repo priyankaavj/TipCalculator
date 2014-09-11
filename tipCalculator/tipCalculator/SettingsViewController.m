@@ -40,14 +40,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    int intValue = (int)[defaults integerForKey:@"another_key_that_you_choose"];
+    int intValue = (int)[defaults integerForKey:@"tip_key"];
     self.deaultTipControl.selectedSegmentIndex = intValue;
 }
 
 - (IBAction)onSettingsChanged:(id)sender {
     int currentIndex = (int) self.deaultTipControl.selectedSegmentIndex;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:currentIndex forKey:@"another_key_that_you_choose"];
+    [defaults setInteger:currentIndex forKey:@"tip_key"];
     [defaults synchronize];
     
 }

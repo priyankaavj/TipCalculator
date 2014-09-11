@@ -17,6 +17,8 @@
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
 - (void)onSettingsButton;
+- (IBAction)onEdit:(id)sender;
+- (IBAction)onEditChange:(id)sender;
 
 @end
 
@@ -43,8 +45,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
    
-    int intValue = (int) [defaults integerForKey:@"another_key_that_you_choose"];
+    int intValue = (int) [defaults integerForKey:@"tip_key"];
     self.tipControl.selectedSegmentIndex = intValue;
+    [self updateValues];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,9 +78,16 @@
 }
 
 - (void)onSettingsButton {
-    NSLog(@"Eh up, someone just pressed the button!");
     [self updateValues];
     [self.navigationController pushViewController:[[SettingsViewController alloc] init] animated:YES];
 
+}
+
+- (IBAction)onEdit:(id)sender {
+    [self updateValues];
+}
+
+- (IBAction)onEditChange:(id)sender {
+    [self updateValues];
 }
 @end
